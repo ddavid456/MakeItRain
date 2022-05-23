@@ -30,6 +30,7 @@ import { SettingsComponent } from './mir/selections/settings/settings.component'
 import { ZoneInfoComponent } from './mir/selections/zones/zone-info/zone-info.component';
 import { LoginComponent } from './mir/login/login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MainComponent } from './mir/main/main.component';
 
 
 @NgModule({
@@ -39,7 +40,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     ZonesComponent,
     SettingsComponent,
     ZoneInfoComponent,
-    LoginComponent
+    LoginComponent,
+    MainComponent
   ],
   imports: [
     BrowserModule,
