@@ -3,6 +3,9 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { HttpClientModule } from '@angular/common/http';
+
 
 // Supporting Modules
 import { NgxMasonryModule } from 'ngx-masonry';
@@ -25,6 +28,8 @@ import { MirComponent } from './mir/mir.component';
 import { ZonesComponent } from './mir/selections/zones/zones.component';
 import { SettingsComponent } from './mir/selections/settings/settings.component';
 import { ZoneInfoComponent } from './mir/selections/zones/zone-info/zone-info.component';
+import { LoginComponent } from './mir/login/login.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -33,7 +38,8 @@ import { ZoneInfoComponent } from './mir/selections/zones/zone-info/zone-info.co
     MirComponent,
     ZonesComponent,
     SettingsComponent,
-    ZoneInfoComponent
+    ZoneInfoComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -49,7 +55,11 @@ import { ZoneInfoComponent } from './mir/selections/zones/zone-info/zone-info.co
     MatTableModule,
     MatFormFieldModule,
     MatTabsModule,
-    MatDialogModule
+    MatDialogModule,
+    FlexLayoutModule,
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
