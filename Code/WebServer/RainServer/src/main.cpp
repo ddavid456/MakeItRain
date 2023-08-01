@@ -3,11 +3,8 @@
 
 // HTML Webfiles
 #include "html_index.h"
-#include "html_favicon.h"
-#include "html_main.h"
-#include "html_polyfills.h"
-#include "html_runtime.h"
-#include "html_styles.h"
+#include "html_primeicons.h"
+#include "html_vite.h"
 
 DNSServer dnsServer;
 AsyncWebServer server(80);
@@ -39,38 +36,17 @@ public:
 
     // Section on Page render resources
 
-    server.on("/styles.css", HTTP_GET, [](AsyncWebServerRequest *request)
+    server.on("assets/primeicons.svg", HTTP_GET, [](AsyncWebServerRequest *request)
               {
         AsyncWebServerResponse *response;
-        response = request->beginResponse_P(200, "text/css", PAGE_styles, PAGE_styles_L);
+        response = request->beginResponse_P(200, "image/svg", PAGE_primeicons, PAGE_primeicons_L);
         response->addHeader(FPSTR(s_content_enc),"gzip");
         request->send(response); });
 
-    server.on("/main.js", HTTP_GET, [](AsyncWebServerRequest *request)
+    server.on("/vite.svg", HTTP_GET, [](AsyncWebServerRequest *request)
               {
         AsyncWebServerResponse *response;
-        response = request->beginResponse_P(200, "text/javascript", PAGE_main, PAGE_main_L);
-        response->addHeader(FPSTR(s_content_enc),"gzip");
-        request->send(response); });
-
-    server.on("/polyfills.js", HTTP_GET, [](AsyncWebServerRequest *request)
-              {
-        AsyncWebServerResponse *response;
-        response = request->beginResponse_P(200, "text/javascript", PAGE_polyfills, PAGE_polyfills_L);
-        response->addHeader(FPSTR(s_content_enc),"gzip");
-        request->send(response); });
-
-    server.on("/runtime.js", HTTP_GET, [](AsyncWebServerRequest *request)
-              {
-        AsyncWebServerResponse *response;
-        response = request->beginResponse_P(200, "text/javascript", PAGE_runtime, PAGE_runtime_L);
-        response->addHeader(FPSTR(s_content_enc),"gzip");
-        request->send(response); });
-
-    server.on("/favicon.ico", HTTP_GET, [](AsyncWebServerRequest *request)
-              {
-        AsyncWebServerResponse *response;
-        response = request->beginResponse_P(200, "image/x-icon", PAGE_favicon, PAGE_favicon_L);
+        response = request->beginResponse_P(200, "image/svg", PAGE_vite, PAGE_vite_L);
         response->addHeader(FPSTR(s_content_enc),"gzip");
         request->send(response); });
 
